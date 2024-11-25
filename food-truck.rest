@@ -1,17 +1,30 @@
+### Varibales
+@apiUrl = http://localhost:3011
+
 ### Menu
-GET /api/v1/menu
+GET @{{apiUrl}}/api/v1/menu
 
 ### Events
-GET /api/v1/events
+GET @{{apiUrl}}/api/v1/events
 
 ### Specific Menu Item By Id
-GET api/v1/menu/:id
+GET @{{apiUrl}}/api/v1/menu/:id
 
 ### Specific Event By Id
-GET /api/v1/events/:id
+GET @{{apiUrl}}/api/v1/events/:id
 
 ### Add Menu Item
-POST /api/v1/menu
+POST @{{apiUrl}}/api/v1/menu
+Content-Type: application/json
+{
+    
+}
 
 ## Add Event
-POST /api/v1/events
+POST @{{apiUrl}}/api/v1/events
+Content-Type: application/json
+{
+    "blah": "blah",
+    "blah": "blah",
+}
+
