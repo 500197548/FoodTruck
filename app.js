@@ -7,7 +7,8 @@ const { getCollection, ObjectId } = require('./dbconnect.js')
 app.use(express.static('public'))
 app.use(express.json())
 app.use('/api/v1', require('./api/v1/menu.js'))
-//app.use('/api/v1', require('./api/v1/events.js'))
+app.use('/api/v1', require('./api/v1/events.js'))
+
 // routes
 app.get('/test', async (req, res) => {
     const collection = await getCollection('FoodTruckApi', 'Events')
