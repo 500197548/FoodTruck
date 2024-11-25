@@ -17,6 +17,10 @@ GET @{{apiUrl}}/api/v1/events/:id
 POST @{{apiUrl}}/api/v1/menu
 Content-Type: application/json
 {
+    "Name": "",
+    "Description": "",
+    "Price": "",
+    "Url": "",
     
 }
 
