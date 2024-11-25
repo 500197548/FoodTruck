@@ -2,22 +2,42 @@
 
 body {
     background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url("images/checkers.jpg");
 }
 
 main{
     margin-top: 5%;
     margin-left: 12%;
     margin-right: 12%;
-    background-color: aliceblue;
+    background-color: antiquewhite;
     border-block: solid;
     border-color: brown;
     border-width: 5px;
 }
 
 #title{
+    padding: 5%;
+    margin: auto;
     text-align: center;
+    font-size: Title;
+    background-color: antiquewhite;
+    border-block: solid;
+    border-color: brown;
+    border-width: 5px;
+
 }
 
 #menu{
     text-align: center;
+}
+
+#menuitem{
+    font-size: medium;
+    margin-left: 20px;
+}
+
+#itemdetails{
+    margin-left: 20px;
+    font-style: italic;
 }
