@@ -18,4 +18,15 @@ router.get('/menu/:id', async (request, response) => {
     else response.send({ error: { message: `Could not find Menu Item with id: ${id}` }})
 })
 
+router.post('/menu/add', async (request, response) => {
+    
+    const collection = await getCollection()
+    const { Name, Description, Price, Url } = request.body
+    console.log({  Name, Description, Price, Url  })
+    const found = collection.find(p => p.Name.toString() === Name.toString())
+    const newId = collection.length + 1
+    if (found) response.send({ error: { message: `Menu Item: ${Name}, already exists`} })
+    else recipes.push({ id: newId, Name, Description, Price, Url}), response.send({message: {message: "Menu Item Added"}})
+})
+
 module.exports = router
