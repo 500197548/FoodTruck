@@ -24,12 +24,12 @@ const getMenu = async ()  => {
     })
 }
 
-getMenu2()
+getMenu()
 
 
 const events = document.getElementById('eventsDiv')
 
-const getEvents2 = async ()  => {
+const getEvents = async ()  => {
 
     const url = '/api/v1/events'
 
@@ -45,10 +45,10 @@ const getEvents2 = async ()  => {
     <p id = "eventDate"> ${Date} </p>
 `
 
-    //div.onclick = () => ShowMenuItem(id)
+    //div.onclick = () => ShowEvent(id)
     events.appendChild(div)
         
     })
 }
 
-getEvents2()
+getEvents()
