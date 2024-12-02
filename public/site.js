@@ -7,7 +7,6 @@ const getMenu2 = async ()  => {
 
     const result = await fetch(url)
     const Food = await result.json()
-    console.log(Food)
 
     Food?.forEach(({Name,Description,Price,Url}) => {
         
@@ -27,17 +26,28 @@ const getMenu2 = async ()  => {
 getMenu2()
 
 
+const events = document.getElementById('eventsDiv')
+
+const getEvents2 = async ()  => {
+
+    const url = '/api/v1/events'
+
+    const result = await fetch(url)
+    const Event = await result.json()
 
 
-// const getEvents = async ()  => {
-//     const url = 'api/v1/events'
-
-//     const result = await fetch(url)
-//     const {Name,Location,Date,Time} = await result.json()
-
-//     const menu = document.getElementById('menuDiv')
-//     Name.forEach(name => {
+    Event?.forEach(({Name,Date,}) => {
         
-//     })
-// }
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <h3 id = "event">${Name}</h3>
+    <p id = "eventDate"> ${Date} </p>
+`
 
+    //div.onclick = () => ShowMenuItem(id)
+    events.appendChild(div)
+        
+    })
+}
+
+getEvents2()

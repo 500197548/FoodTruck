@@ -4,11 +4,8 @@ const { getCollection, ObjectId } = require('../../dbconnect')
 // Routes
 router.get('/events', async (req, res) => {
     const collection = await getCollection('FoodTruckApi', 'Events')
-    
     const eventsList = await collection.find({}).toArray()
-    const results = {"Events": eventsList}
-    
-    res.send(results)
+    res.send(eventsList)
 })
 
 router.get('/events/:id', async (request, response) => {
