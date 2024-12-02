@@ -7,6 +7,7 @@ const getMenu2 = async ()  => {
 
     const result = await fetch(url)
     const Food = await result.json()
+    console.log(Food)
 
     Food?.forEach(({Name,Description,Price,Url}) => {
         
