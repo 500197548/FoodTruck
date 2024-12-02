@@ -15,33 +15,40 @@ router.get('/tests', async (req, res) => {
     res.send( await collection.findOne( {"Name": "Taco Tuesday"} ))
 })
 
+const router = require('../api/v1/menu')
+const Get = router.get()
+
+
 const getMenu = async ()  => {
+
 
     const url = 'api/v1/menu'
 
     const result = await fetch(url)
-    const {Name,Description,Price,Image} = await result.json()
+    const Food = await result.json()
 
     const menu = document.getElementById('menuDiv')
 
-    Name.forEach(name => {
-        // const img = document.createElement('img')
-        // img.src = Image
+    Food.forEach(food => {
+        const img = document.createElement('img')
+        img.src = food.Url
 
         const h3 = document.createElement('h3')
         h3.id = "menuitem"
-        h3.textContent = name
+        h3.textContent = food.Name
 
-        // const p = document.createElement('p')
-        // p.id = "itemdetails"
-        // p.textContent = Price + " | " + Description
+        const p = document.createElement('p')
+        p.id = "itemdetails"
+        p.textContent = food.Price + " | " + food.Description
         
-        //menu.append(img,h3,p)
-        menu.append(h3)
+        menu.append(img,h3,p)
+        //menu.append(h3)
         
     });
 
 }
+
+
 
 getMenu()
 
@@ -57,8 +64,3 @@ const getEvents = async ()  => {
     })
 }
 
-const EventButton = document.getElementById('btnEvent')
-
-EventButton.addEventListener('click', () => {
-    getEvents();
-});
