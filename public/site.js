@@ -1,35 +1,14 @@
-/* Make Things Work */
-const router = require('express').Router()
-const express = require('express')
-const app = express()
-const port = 3011
-const { getCollection, ObjectId } = require('../secrets/dbcon.json')
 
-// middleware
-app.use(express.static('public'))
-app.use(express.json())
-
-// routes
-router.get('/tests', async (req, res) => {
-    const collection = await getCollection('FoodTruckApi', 'Events')
-    res.send( await collection.findOne( {"Name": "Taco Tuesday"} ))
-})
-
-const router = require('../api/v1/menu')
-const Get = router.get()
-
+const menu = document.getElementById('menuDiv')
 
 const getMenu = async ()  => {
 
-
-    const url = 'api/v1/menu'
+    const url = '/api/v1/menu'
 
     const result = await fetch(url)
     const Food = await result.json()
 
-    const menu = document.getElementById('menuDiv')
-
-    Food.forEach(food => {
+    Food?.forEach(food => {
         const img = document.createElement('img')
         img.src = food.Url
 
@@ -41,26 +20,24 @@ const getMenu = async ()  => {
         p.id = "itemdetails"
         p.textContent = food.Price + " | " + food.Description
         
-        menu.append(img,h3,p)
-        //menu.append(h3)
+        //menu.append(img,h3,p)
+        menu.appendChild(h3)
         
-    });
-
-}
-
-
+    })}
 
 getMenu()
 
-const getEvents = async ()  => {
-    const url = 'api/v1/events'
 
-    const result = await fetch(url)
-    const {Name,Location,Date,Time} = await result.json()
 
-    const menu = document.getElementById('menuDiv')
-    Name.forEach(name => {
+// const getEvents = async ()  => {
+//     const url = 'api/v1/events'
+
+//     const result = await fetch(url)
+//     const {Name,Location,Date,Time} = await result.json()
+
+//     const menu = document.getElementById('menuDiv')
+//     Name.forEach(name => {
         
-    })
-}
+//     })
+// }
 

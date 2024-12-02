@@ -4,10 +4,20 @@ const { getCollection, ObjectId } = require('../../dbconnect')
 
 // routes
 router.get('/menu', async (request, response) => {
-    const collection = await getCollection('FoodTruckApi', 'Menu')
-    const found = await collection.find({}).toArray()
-    const results = {"Menu": found}
-    response.send(results)
+    response.send([{
+
+        "Name": "Donut",
+        "Description": "Fresh Glazed Donut",
+        "Price": "1.99",
+        "Url": "Image Path"
+    
+        }])
+
+
+    // const collection = await getCollection('FoodTruckApi', 'Menu')
+    // const found = await collection.find({}).toArray()
+    // const results = {"Menu": found}
+    // response.send(results)
 })
 
 router.get('/menu/:id', async (request, response) => {
