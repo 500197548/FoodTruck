@@ -1,31 +1,30 @@
 
 const menu = document.getElementById('menuDiv')
 
-const getMenu = async ()  => {
+const getMenu2 = async ()  => {
 
     const url = '/api/v1/menu'
 
     const result = await fetch(url)
     const Food = await result.json()
 
-    Food?.forEach(food => {
-        const img = document.createElement('img')
-        img.src = food.Url
-
-        const h3 = document.createElement('h3')
-        h3.id = "menuitem"
-        h3.textContent = food.Name
-
-        const p = document.createElement('p')
-        p.id = "itemdetails"
-        p.textContent = food.Price + " | " + food.Description
+    Food?.forEach(({Name,Description,Price,Url}) => {
         
-        //menu.append(img,h3,p)
-        menu.appendChild(h3)
-        
-    })}
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <img src="${Url}" alt="${Name}">
+    <h3 id = "menuitem">${Name}</h3>
+    <p id = "itemdetails"><strong>$ ${Price}</strong> | <strong>${Description}</strong> </p>
+`
 
-getMenu()
+    //div.onclick = () => ShowMenuItem(id)
+    menu.appendChild(div)
+        
+    })
+}
+
+getMenu2()
+
 
 
 
