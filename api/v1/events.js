@@ -10,6 +10,15 @@ router.get('/events', async (req, res) => {
     
     res.send(results)
 })
+
+router.get('/events/:id', async (request, response) => {
+    const { id } = request.params
+    const collection = await getCollection('FoodTruckApi', 'Events')
+    const found = await collection.findOne({ "id": parseInt(id) })
+    if (found) response.send(found)
+    else response.send({ error: { message: `Could not find Event with id: ${id}` }})
+})
+
 router.post('/events/add', async (request, response) => {  
     const { Name, Location, Date, Time} = request.body
     const collection = await getCollection('FoodTruckApi', 'Events')
