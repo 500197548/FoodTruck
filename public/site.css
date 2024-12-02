@@ -42,6 +42,14 @@ main{
     font-style: italic;
 }
 
+#btnEvent{
+    background-color: cadetblue;
+    font-size: large;
+    padding: 20px,0px;
+    margin: 40px;
+    color: cornsilk;
+}
+
 #events{
     text-align: center;
 }
