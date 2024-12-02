@@ -1,7 +1,7 @@
 
 const menu = document.getElementById('menuDiv')
 
-const getMenu2 = async ()  => {
+const getMenu = async ()  => {
 
     const url = '/api/v1/menu'
 
@@ -12,9 +12,10 @@ const getMenu2 = async ()  => {
         
     const div = document.createElement("div")
     div.innerHTML = `
-    <img src="${Url}" alt="${Name}">
+    <img id = "menuimg" src="${Url}" alt="${Name}">
     <h3 id = "menuitem">${Name}</h3>
     <p id = "itemdetails"><strong>$ ${Price}</strong> | <strong>${Description}</strong> </p>
+    <hr>
 `
 
     //div.onclick = () => ShowMenuItem(id)
@@ -23,20 +24,4 @@ const getMenu2 = async ()  => {
     })
 }
 
-getMenu2()
-
-
-
-
-// const getEvents = async ()  => {
-//     const url = 'api/v1/events'
-
-//     const result = await fetch(url)
-//     const {Name,Location,Date,Time} = await result.json()
-
-//     const menu = document.getElementById('menuDiv')
-//     Name.forEach(name => {
-        
-//     })
-// }
-
+getMenu()
