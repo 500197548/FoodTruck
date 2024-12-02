@@ -4,36 +4,9 @@ const { getCollection, ObjectId } = require('../../dbconnect')
 
 // routes
 router.get('/menu', async (request, response) => {
-    response.send([{
-
-        "Name": "Donut",
-        "Description": "Fresh Glazed Donut",
-        "Price": "1.99",
-        "Url": "https://assets.epicurious.com/photos/54b0226d766062b20344580a/1:1/w_2560%2Cc_limit/51160200_glazed-doughnuts_1x1.jpg"
-    
-        },
-        {
-
-            "Name": "Donut",
-            "Description": "Fresh Glazed Donut",
-            "Price": "1.99",
-            "Url": "https://assets.epicurious.com/photos/54b0226d766062b20344580a/1:1/w_2560%2Cc_limit/51160200_glazed-doughnuts_1x1.jpg"
-        
-            },
-            {
-
-                "Name": "Donut",
-                "Description": "Fresh Glazed Donut",
-                "Price": "1.99",
-                "Url": "https://assets.epicurious.com/photos/54b0226d766062b20344580a/1:1/w_2560%2Cc_limit/51160200_glazed-doughnuts_1x1.jpg"
-            
-                }])
-
-
-    // const collection = await getCollection('FoodTruckApi', 'Menu')
-    // const found = await collection.find({}).toArray()
-    // const results = {"Menu": found}
-    // response.send(results)
+    const collection = await getCollection('FoodTruckApi', 'Menu')
+    const found = await collection.find({}).toArray()
+    response.send(found)
 })
 
 router.get('/menu/:id', async (request, response) => {

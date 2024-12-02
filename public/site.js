@@ -24,4 +24,31 @@ const getMenu = async ()  => {
     })
 }
 
-getMenu()
+getMenu2()
+
+
+const events = document.getElementById('eventsDiv')
+
+const getEvents2 = async ()  => {
+
+    const url = '/api/v1/events'
+
+    const result = await fetch(url)
+    const Event = await result.json()
+
+
+    Event?.forEach(({Name,Date,}) => {
+        
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <h3 id = "event">${Name}</h3>
+    <p id = "eventDate"> ${Date} </p>
+`
+
+    //div.onclick = () => ShowMenuItem(id)
+    events.appendChild(div)
+        
+    })
+}
+
+getEvents2()
