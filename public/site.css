@@ -16,6 +16,34 @@ main{
     border-width: 5px;
 }
 
+form label {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+form input {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+
+.columnTitle {
+    text-align: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 #title{
     padding: 5%;
     margin: auto;
