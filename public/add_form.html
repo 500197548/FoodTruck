@@ -11,29 +11,29 @@
         <div class="row">
             <div class="column">
                 <h2 class="columnTitle">Add to the Menu</h2>
-                <form method="post">
+                <form action="/admin/addMenuItem" method="post">
                     <label for="frmFoodName">Food Name:</label>
-                    <input type="text" id="frmFoodName" name="frmFoodName"><br>
+                    <input type="text" id="frmFoodName" name="Name"><br>
                     <label for="frmFoodDescription">Description:</label>
-                    <input type="text" id="frmFoodDescription" name="frmFoodDescription"><br>
+                    <input type="text" id="frmFoodDescription" name="Description"><br>
                     <label for="frmFoodPrice">Price:</label>
-                    <input type="text" id="frmFoodPrice" name="frmFoodPrice"><br>
+                    <input type="text" id="frmFoodPrice" name="Price"><br>
                     <label for="frmFoodImageURL">Image URL:</label>
-                    <input type="url" id="frmFoodImageURL" name="frmFoodImageURL"><br>
+                    <input type="url" id="frmFoodImageURL" name="Url"><br>
                     <input type="submit" value="Add Menu Item"><br>
                 </form>
             </div>
             <div class="column">
                 <h2 class="columnTitle">Create an Event</h2>
-                <form method="post">
+                <form action="/admin/addEvent" method="post">
                     <label for="frmEventName">Event Name:</label>
-                    <input type="text" id="frmEventName" name="frmEventName"><br>
+                    <input type="text" id="frmEventName" name="Name"><br>
                     <label for="frmEventDate">Date:</label>
-                    <input type="date" id="frmEventDate" name="frmEventDate"><br>
+                    <input type="date" id="frmEventDate" name="Date"><br>
                     <label for="frmEventLocation">Location:</label>
-                    <input type="text" id="frmEventLocation" name="frmEventLocation"><br>
+                    <input type="text" id="frmEventLocation" name="Location"><br>
                     <label for="frmEventTime">Time:</label>
-                    <input type="time" id="frmEventTime" name="frmEventTime"><br>
+                    <input type="time" id="frmEventTime" name="Time"><br>
                     <input type="submit" value="Add Event">
                 </form>
             </div>
