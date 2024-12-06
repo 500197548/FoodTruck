@@ -55,29 +55,26 @@ const getEvents = async ()  => {
     })
 }
 
-<<<<<<< HEAD
 getEvents2()
 
 
 
 
-const getEvents = async (id) => {
+const getEventById = async (id) => {
 const event = document.getElementById('eventDiv')
     const url = '/api/v1/events'
 
     const result = await fetch(url)
     const Event = await result.json(id)
-    const {id,}
+    const {id, Name, Location, Date, Time} = getEvent(id)
     
     const div = document.createElement("div")
     div.innerHTML = `
-    <h3 id = "event">${Event.Name}</a></h3>
-    <p id = "eventLoc"> ${Event.Location} </p>
-    <p id = "eventDate"> ${Event.Date} </p>
-    <p id = "eventTime"> ${Event.Time} </p>
+    <h3 id = "event">${Name}</a></h3>
+    <p id = "eventLoc"> ${Location} </p>
+    <p id = "eventDate"> ${Date} </p>
+    <p id = "eventTime"> ${Time} </p>
     `
     event.appendChild(div)
 }
-=======
->>>>>>> 8d6b8c84c42c3e9fbe240ff184b5ee23ec555091
-getEvents()
+getEventById()
