@@ -85,6 +85,17 @@ form input {
     font-style: italic;
 }
 
+
+#eventLoc{
+    margin-left: 20px;
+    font-style: italic;
+}
+
+#eventTime{
+    margin-left: 20px;
+    font-style: italic;
+}
+
 #menuimg{
     border-block: solid;
     border-color: brown;

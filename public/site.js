@@ -15,8 +15,7 @@ const getMenu = async ()  => {
     <img id = "menuimg" src="${Url}" alt="${Name}">
     <h3 id = "menuitem">${Name}</h3>
     <p id = "itemdetails"><strong>$ ${Price}</strong> | <strong>${Description}</strong> </p>
-    <hr>
-`
+    <hr>`
 
     //div.onclick = () => ShowMenuItem(id)
     menu.appendChild(div)
@@ -30,6 +29,7 @@ const getEvent = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
 	return await response.json()
 }
+
 
 const events = document.getElementById('eventsDiv')
 
@@ -48,33 +48,34 @@ const getEvents = async ()  => {
     <h3 id = "event"><a href="events.html?id=${id}" class="active">${Name}</a></h3>
     <p id = "eventDate"> ${Date} </p>
 `
-
-    //div.onclick = () => ShowEvent(id)
     events.appendChild(div)
-        
+    // div.onclick = () => getEventById(id)
+    
+
     })
 }
 
-getEvents2()
+getEvents()
 
-
-
-
-const getEventById = async (id) => {
-const event = document.getElementById('eventDiv')
-    const url = '/api/v1/events'
-
+const getEventById = async () => {
+    const event = document.getElementById('eventDiv')
+    const params = new URLSearchParams(location.search)
+    const number = params.get('id')
+    const url = `/api/v1/events/${number}`
     const result = await fetch(url)
-    const Event = await result.json(id)
-    const {id, Name, Location, Date, Time} = getEvent(id)
+    let pick = parseInt(number)
     
+    const { id, Name, Location, Date, Time} = await result.json()
+    pick = id
     const div = document.createElement("div")
     div.innerHTML = `
     <h3 id = "event">${Name}</a></h3>
     <p id = "eventLoc"> ${Location} </p>
     <p id = "eventDate"> ${Date} </p>
     <p id = "eventTime"> ${Time} </p>
-    `
+`
     event.appendChild(div)
 }
+
 getEventById()
+
