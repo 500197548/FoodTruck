@@ -25,6 +25,10 @@ const getMenu2 = async ()  => {
 
 getMenu2()
 
+const getEvent = async id => {
+	const response = await fetch(`/api/v1/events/${id}`)
+	return await response.json()
+}
 
 const events = document.getElementById('eventsDiv')
 
@@ -36,11 +40,11 @@ const getEvents2 = async ()  => {
     const Event = await result.json()
 
 
-    Event?.forEach(({Name,Date,}) => {
+    Event?.forEach(({Name,Date,id}) => {
         
     const div = document.createElement("div")
     div.innerHTML = `
-    <h3 id = "event">${Name}</h3>
+    <h3 id = "event"><a href="events.html?id=${id}" class="active">${Name}</a></h3>
     <p id = "eventDate"> ${Date} </p>
 `
 
@@ -51,3 +55,25 @@ const getEvents2 = async ()  => {
 }
 
 getEvents2()
+
+
+
+
+const getEvents = async (id) => {
+const event = document.getElementById('eventDiv')
+    const url = '/api/v1/events'
+
+    const result = await fetch(url)
+    const Event = await result.json(id)
+    const {id,}
+    
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <h3 id = "event">${Event.Name}</a></h3>
+    <p id = "eventLoc"> ${Event.Location} </p>
+    <p id = "eventDate"> ${Event.Date} </p>
+    <p id = "eventTime"> ${Event.Time} </p>
+    `
+    event.appendChild(div)
+}
+getEvents()

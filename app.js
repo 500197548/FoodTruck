@@ -8,6 +8,7 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use('/api/v1', require('./api/v1/menu.js'))
 app.use('/api/v1', require('./api/v1/events.js'))
+app.use(require('./api/static.js'))
 
 // routes
 app.get('/test', async (req, res) => {
