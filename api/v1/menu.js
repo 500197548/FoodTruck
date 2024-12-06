@@ -22,12 +22,12 @@ router.post('/add', async (request, response) => {
     
     const collection = await getCollection('FoodTruckApi', 'Menu')
     const menu = await collection.find().toArray();
-    console.log(menu)
+    //console.log(menu)
     const found = menu.find(c => c.Name.toString() === Name.toString())
     const newId = menu.length + 1
     if (found) response.send({ error: { message: `Menu Item: ${Name}, already exists`} })
     else collection.insertOne({Name, Description, Price, Url, id: newId}), response.send({message: {message: `Event Scheduled ${Name}, ${Description}, ${Price}, ${Url}`}})
-    console.log(menu)
+    //console.log(menu)
 })
 
 module.exports = router

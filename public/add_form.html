@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Add to Menu | Farthest Corners Foodtruck</title>
+</head>
+<body>
+    <main>
+        <div class="row">
+            <div class="column">
+                <h2 class="columnTitle">Add to the Menu</h2>
+                <form action="/admin/addMenuItem" method="post">
+                    <label for="frmFoodName">Food Name:</label>
+                    <input type="text" id="frmFoodName" name="Name"><br>
+                    <label for="frmFoodDescription">Description:</label>
+                    <input type="text" id="frmFoodDescription" name="Description"><br>
+                    <label for="frmFoodPrice">Price:</label>
+                    <input type="text" id="frmFoodPrice" name="Price"><br>
+                    <label for="frmFoodImageURL">Image URL:</label>
+                    <input type="url" id="frmFoodImageURL" name="Url"><br>
+                    <input type="submit" value="Add Menu Item"><br>
+                </form>
+            </div>
+            <div class="column">
+                <h2 class="columnTitle">Create an Event</h2>
+                <form action="/admin/addEvent" method="post">
+                    <label for="frmEventName">Event Name:</label>
+                    <input type="text" id="frmEventName" name="Name"><br>
+                    <label for="frmEventDate">Date:</label>
+                    <input type="date" id="frmEventDate" name="Date"><br>
+                    <label for="frmEventLocation">Location:</label>
+                    <input type="text" id="frmEventLocation" name="Location"><br>
+                    <label for="frmEventTime">Time:</label>
+                    <input type="time" id="frmEventTime" name="Time"><br>
+                    <input type="submit" value="Add Event">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

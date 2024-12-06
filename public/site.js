@@ -1,7 +1,7 @@
 
 const menu = document.getElementById('menuDiv')
 
-const getMenu2 = async ()  => {
+const getMenu = async ()  => {
 
     const url = '/api/v1/menu'
 
@@ -12,9 +12,10 @@ const getMenu2 = async ()  => {
         
     const div = document.createElement("div")
     div.innerHTML = `
-    <img src="${Url}" alt="${Name}">
+    <img id = "menuimg" src="${Url}" alt="${Name}">
     <h3 id = "menuitem">${Name}</h3>
     <p id = "itemdetails"><strong>$ ${Price}</strong> | <strong>${Description}</strong> </p>
+    <hr>
 `
 
     //div.onclick = () => ShowMenuItem(id)
@@ -23,7 +24,7 @@ const getMenu2 = async ()  => {
     })
 }
 
-getMenu2()
+getMenu()
 
 const getEvent = async id => {
 	const response = await fetch(`/api/v1/events/${id}`)
@@ -32,7 +33,7 @@ const getEvent = async id => {
 
 const events = document.getElementById('eventsDiv')
 
-const getEvents2 = async ()  => {
+const getEvents = async ()  => {
 
     const url = '/api/v1/events'
 
@@ -48,12 +49,13 @@ const getEvents2 = async ()  => {
     <p id = "eventDate"> ${Date} </p>
 `
 
-    //div.onclick = () => ShowMenuItem(id)
+    //div.onclick = () => ShowEvent(id)
     events.appendChild(div)
         
     })
 }
 
+<<<<<<< HEAD
 getEvents2()
 
 
@@ -76,4 +78,6 @@ const event = document.getElementById('eventDiv')
     `
     event.appendChild(div)
 }
+=======
+>>>>>>> 8d6b8c84c42c3e9fbe240ff184b5ee23ec555091
 getEvents()
