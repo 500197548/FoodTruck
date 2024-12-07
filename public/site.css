@@ -40,6 +40,10 @@ form input {
 .columnTitle {
     text-align: center;
   }
+
+  .row {
+    padding: 10px 0px;
+  }
   
   /* Clear floats after the columns */
   .row:after {
