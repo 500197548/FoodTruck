@@ -13,13 +13,13 @@
                 <h2 class="columnTitle">Add to the Menu</h2>
                 <form action="/admin/addMenuItem" method="post">
                     <label for="frmFoodName">Food Name:</label>
-                    <input type="text" id="frmFoodName" name="Name"><br>
+                    <input type="text" id="frmFoodName" name="Name" placeholder="Cheeseburger"><br>
                     <label for="frmFoodDescription">Description:</label>
-                    <input type="text" id="frmFoodDescription" name="Description"><br>
+                    <input type="text" id="frmFoodDescription" name="Description" placeholder="Burger with cheese"><br>
                     <label for="frmFoodPrice">Price:</label>
-                    <input type="text" id="frmFoodPrice" name="Price"><br>
+                    <input type="text" id="frmFoodPrice" name="Price" placeholder="1.99" pattern="^\d+\.\d{2}$" title="Make sure to write out the full price of the item including cents. Do not include dollar signs."><br>
                     <label for="frmFoodImageURL">Image URL:</label>
-                    <input type="url" id="frmFoodImageURL" name="Url"><br>
+                    <input type="url" id="frmFoodImageURL" name="Url" placeholder="https://www.Image.path"><br>
                     <input type="submit" value="Add Menu Item"><br>
                 </form>
             </div>
@@ -27,11 +27,11 @@
                 <h2 class="columnTitle">Create an Event</h2>
                 <form action="/admin/addEvent" method="post">
                     <label for="frmEventName">Event Name:</label>
-                    <input type="text" id="frmEventName" name="Name"><br>
+                    <input type="text" id="frmEventName" name="Name" placeholder="Taco Tuesday"><br>
                     <label for="frmEventDate">Date:</label>
                     <input type="date" id="frmEventDate" name="Date"><br>
                     <label for="frmEventLocation">Location:</label>
-                    <input type="text" id="frmEventLocation" name="Location"><br>
+                    <input type="text" id="frmEventLocation" name="Location" placeholder="Appleton, Wisconsin" pattern="^[a-zA-Z]+, [a-zA-Z\s]+$" title="Please enter a city and state (comma seperated with a space in-between)."><br>
                     <label for="frmEventTime">Time:</label>
                     <input type="time" id="frmEventTime" name="Time"><br>
                     <input type="submit" value="Add Event">

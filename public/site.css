@@ -1,5 +1,9 @@
 /* Make Look Pretty */
 
+html {
+    height: 100vh;
+}
+
 body {
     background-color: antiquewhite;
     font-family: Georgia, 'Times New Roman', Times, serif;
