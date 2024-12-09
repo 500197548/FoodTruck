@@ -4,6 +4,7 @@ const port = 3011
 const { getCollection, ObjectId } = require('./dbconnect.js')
 const path = require('path')
 const root = path.join(__dirname, 'public')
+const fetch = require("node-fetch")
 
 // middleware
 app.use(express.static('public'))
